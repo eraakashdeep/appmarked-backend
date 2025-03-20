@@ -14,6 +14,9 @@ app.use(
     origin: "*",
   })
 );
+app.get("/", (req, res) => {
+  res.json({ status: true, message: "Test API" });
+});
 
 //Middleware
 app.use(express.json());
