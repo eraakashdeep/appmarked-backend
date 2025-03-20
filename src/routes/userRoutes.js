@@ -3,6 +3,9 @@ const verifyToken = require("../middlewares/authMiddleware");
 const authorizeRoles = require("../middlewares/roleMiddleware");
 const router = express.Router();
 
+router.get("/api/test", (req, res) => {
+    res.json({ message: "API is working" });
+  });
 // Only admin can access this router
 router.get("/admin", verifyToken, authorizeRoles("admin"), (req, res) => {
     res.json({ message: "Welcome Admin" });

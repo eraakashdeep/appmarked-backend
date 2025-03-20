@@ -26,6 +26,11 @@ app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
 //Start the server
 const PORT = process.env.PORT || 7002;
+
+app.get("/", (req, res) => {
+  res.send("Server is running!");
+});
+
 app.listen(PORT, () => {
     console.log(`Server is running at port ${PORT}`);
 })
